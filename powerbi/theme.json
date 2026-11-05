@@ -1,0 +1,20 @@
+{
+  "name": "Commerce Sentinel | Dark Analytics",
+  "dataColors": ["#00C9D8", "#FFB454", "#EF476F", "#7C83FD", "#22C55E", "#3B82F6", "#F97316", "#A78BFA"],
+  "background": "#0B1220",
+  "foreground": "#E8EEF8",
+  "tableAccent": "#00C9D8",
+  "good": "#22C55E",
+  "neutral": "#FFB454",
+  "bad": "#EF476F",
+  "minimum": "#00C9D8",
+  "center": "#FFB454",
+  "maximum": "#EF476F",
+  "null": "#64748B",
+  "textClasses": {
+    "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#F8FAFC"},
+    "title": {"fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#F8FAFC"},
+    "header": {"fontFace": "Segoe UI Semibold", "fontSize": 11, "color": "#CBD5E1"},
+    "label": {"fontFace": "Segoe UI", "fontSize": 10, "color": "#CBD5E1"}
+  }
+}

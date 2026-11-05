@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0B1220"/><stop offset="1" stop-color="#101C31"/></linearGradient>
+    <linearGradient id="cyan" x2="1" y2="1"><stop stop-color="#00C9D8" stop-opacity=".32"/><stop offset="1" stop-color="#00C9D8" stop-opacity="0"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#020617" flood-opacity=".28"/></filter>
+    <style>
+      text{font-family:"Segoe UI",Arial,sans-serif;fill:#E8EEF8}
+      .muted{fill:#8FA4BE}.small{font-size:13px}.label{font-size:15px;font-weight:600}.big{font-size:30px;font-weight:700}
+      .panel{fill:#152238;stroke:#253754;stroke-width:1;filter:url(#shadow)}
+      .grid{stroke:#2A3C57;stroke-width:1}.axis{fill:#7890AD;font-size:11px}
+    </style>
+  </defs>
+  <rect width="1440" height="810" fill="url(#bg)"/>
+  <rect x="0" y="0" width="222" height="810" fill="#0A1425"/>
+  <rect x="221" y="0" width="1" height="810" fill="#223450"/>
+  <circle cx="36" cy="39" r="15" fill="#00C9D8"/><path d="M30 40l4 4 8-10" fill="none" stroke="#082033" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="62" y="45" font-size="17" font-weight="700">COMMERCE</text><text x="62" y="64" class="small" fill="#00C9D8">SENTINEL</text>
+  <text x="29" y="123" class="small muted">ANALYSES</text>
+  <rect x="17" y="140" width="188" height="43" rx="10" fill="#16344D"/><rect x="17" y="140" width="4" height="43" rx="2" fill="#00C9D8"/>
+  <text x="35" y="167" class="label">Vue exécutive</text>
+  <text x="35" y="222" class="small muted">Activité &amp; saisonnalité</text>
+  <text x="35" y="265" class="small muted">Catégories &amp; produits</text>
+  <text x="35" y="308" class="small muted">Clients &amp; géographie</text>
+  <text x="35" y="351" class="small muted">Anomalies</text>
+  <text x="35" y="394" class="small muted">Variations &amp; qualité</text>
+  <text x="35" y="437" class="small muted">Explorateur</text>
+  <rect x="18" y="692" width="186" height="92" rx="12" fill="#13263A" stroke="#254A61"/>
+  <circle cx="42" cy="719" r="5" fill="#22C55E"/><text x="55" y="724" class="small">Pipeline prêt</text>
+  <text x="31" y="751" class="small muted">Kafka → HDFS → MR</text>
+  <text x="31" y="770" font-size="11" fill="#64748B">MAQUETTE • données fictives</text>
+  <text x="250" y="46" font-size="26" font-weight="700">Vue exécutive</text>
+  <text x="250" y="70" class="small muted">Transactions commerciales · détection d'anomalies</text>
+  <rect x="1104" y="27" width="306" height="38" rx="9" fill="#152238" stroke="#2A3C57"/>
+  <text x="1123" y="51" class="small">01 nov. 2026  —  30 nov. 2026</text>
+  <rect x="250" y="93" width="215" height="112" rx="14" class="panel"/><text x="268" y="124" class="small muted">TRANSACTIONS</text><text x="268" y="167" class="big">100 000</text><text x="268" y="190" font-size="12" fill="#22C55E">+12,4 % vs période préc.</text>
+  <rect x="481" y="93" width="215" height="112" rx="14" class="panel"/><text x="499" y="124" class="small muted">CHIFFRE D'AFFAIRES</text><text x="499" y="167" class="big">8,42 M</text><text x="499" y="190" font-size="12" fill="#22C55E">+8,7 % vs période préc.</text>
+  <rect x="712" y="93" width="215" height="112" rx="14" class="panel"/><text x="730" y="124" class="small muted">PANIER MOYEN</text><text x="730" y="167" class="big">84,20</text><text x="730" y="190" font-size="12" fill="#8FA4BE">par transaction</text>
+  <rect x="943" y="93" width="215" height="112" rx="14" class="panel"/><text x="961" y="124" class="small muted">ANOMALIES</text><text x="961" y="167" class="big" fill="#EF476F">5 120</text><text x="961" y="190" font-size="12" fill="#EF476F">5,12 % des transactions</text>
+  <rect x="1174" y="93" width="236" height="112" rx="14" class="panel"/><text x="1192" y="124" class="small muted">CLIENTS ATYPIQUES</text><text x="1192" y="167" class="big" fill="#FFB454">42</text><text x="1192" y="190" font-size="12" fill="#8FA4BE">activité élevée</text>
+  <rect x="250" y="222" width="747" height="298" rx="14" class="panel"/>
+  <text x="272" y="254" class="label">Évolution du chiffre d'affaires et des transactions</text><text x="272" y="275" class="small muted">Volume quotidien • période sélectionnée</text>
+  <line x1="289" y1="317" x2="966" y2="317" class="grid"/><line x1="289" y1="369" x2="966" y2="369" class="grid"/><line x1="289" y1="421" x2="966" y2="421" class="grid"/><line x1="289" y1="473" x2="966" y2="473" class="grid"/>
+  <text x="260" y="319" class="axis">12k</text><text x="260" y="371" class="axis">8k</text><text x="260" y="423" class="axis">4k</text><text x="265" y="475" class="axis">0</text>
+  <path d="M289 445 L333 425 377 432 421 397 465 404 509 388 553 402 597 350 641 366 685 339 729 350 773 311 817 326 861 292 905 306 966 278 L966 473 L289 473 Z" fill="url(#cyan)"/>
+  <path d="M289 445 L333 425 377 432 421 397 465 404 509 388 553 402 597 350 641 366 685 339 729 350 773 311 817 326 861 292 905 306 966 278" fill="none" stroke="#00C9D8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M289 461 L333 455 377 443 421 450 465 437 509 440 553 423 597 426 641 415 685 421 729 397 773 410 817 385 861 390 905 370 966 372" fill="none" stroke="#FFB454" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="295" y="497" class="axis">01 nov.</text><text x="555" y="497" class="axis">10 nov.</text><text x="778" y="497" class="axis">20 nov.</text><text x="925" y="497" class="axis">30 nov.</text>
+  <rect x="1013" y="222" width="397" height="298" rx="14" class="panel"/>
+  <text x="1035" y="254" class="label">CA par catégorie</text><text x="1035" y="275" class="small muted">Top 5 • filtre interactif</text>
+  <text x="1035" y="314" class="small">Electronics</text><rect x="1151" y="302" width="220" height="14" rx="7" fill="#223753"/><rect x="1151" y="302" width="197" height="14" rx="7" fill="#00C9D8"/>
+  <text x="1035" y="354" class="small">Home</text><rect x="1151" y="342" width="220" height="14" rx="7" fill="#223753"/><rect x="1151" y="342" width="156" height="14" rx="7" fill="#3B82F6"/>
+  <text x="1035" y="394" class="small">Clothing</text><rect x="1151" y="382" width="220" height="14" rx="7" fill="#223753"/><rect x="1151" y="382" width="119" height="14" rx="7" fill="#7C83FD"/>
+  <text x="1035" y="434" class="small">Beauty</text><rect x="1151" y="422" width="220" height="14" rx="7" fill="#223753"/><rect x="1151" y="422" width="83" height="14" rx="7" fill="#A78BFA"/>
+  <text x="1035" y="474" class="small">Food</text><rect x="1151" y="462" width="220" height="14" rx="7" fill="#223753"/><rect x="1151" y="462" width="60" height="14" rx="7" fill="#22C55E"/>
+  <rect x="250" y="537" width="536" height="248" rx="14" class="panel"/>
+  <text x="272" y="570" class="label">Anomalies récentes</text><text x="272" y="592" class="small muted">Montant supérieur au seuil statistique</text>
+  <text x="273" y="628" font-size="11" fill="#6F8BA9">TRANSACTION</text><text x="445" y="628" font-size="11" fill="#6F8BA9">CATÉGORIE</text><text x="618" y="628" font-size="11" fill="#6F8BA9">MONTANT</text>
+  <line x1="272" y1="638" x2="764" y2="638" class="grid"/>
+  <text x="273" y="667" class="small">TRX50001</text><text x="445" y="667" class="small">Electronics</text><text x="630" y="667" class="small" fill="#EF476F">25 000</text>
+  <line x1="272" y1="680" x2="764" y2="680" class="grid"/>
+  <text x="273" y="709" class="small">TRX48902</text><text x="445" y="709" class="small">Home</text><text x="630" y="709" class="small" fill="#EF476F">18 600</text>
+  <line x1="272" y1="722" x2="764" y2="722" class="grid"/>
+  <text x="273" y="751" class="small">TRX46277</text><text x="445" y="751" class="small">Clothing</text><text x="630" y="751" class="small" fill="#EF476F">9 700</text>
+  <rect x="802" y="537" width="608" height="248" rx="14" class="panel"/>
+  <text x="824" y="570" class="label">Points d'attention</text><text x="824" y="592" class="small muted">Variations de période et activité client</text>
+  <rect x="824" y="618" width="564" height="62" rx="10" fill="#352838" stroke="#694055"/>
+  <circle cx="846" cy="649" r="8" fill="#EF476F"/><text x="864" y="645" class="small">Pic de volume détecté</text><text x="864" y="665" font-size="12" fill="#B8A8B5">21 000 vs 10 000 transactions • +110 %</text>
+  <rect x="824" y="694" width="564" height="62" rx="10" fill="#2C2D37" stroke="#5D4F43"/>
+  <circle cx="846" cy="725" r="8" fill="#FFB454"/><text x="864" y="721" class="small">Client à forte activité</text><text x="864" y="741" font-size="12" fill="#B7AD9A">CUST0021 • 850 transactions • 720 000</text>
+</svg>

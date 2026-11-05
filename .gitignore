@@ -1,0 +1,4 @@
+target/
+.vscode/
+*.log
+hs_err_pid*

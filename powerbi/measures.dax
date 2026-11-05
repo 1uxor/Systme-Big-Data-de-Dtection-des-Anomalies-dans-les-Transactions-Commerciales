@@ -1,0 +1,68 @@
+﻿// CrÃ©er d'abord les tables et relations dÃ©crites dans README.md.
+// Chaque dÃ©finition ci-dessous est une mesure distincte Ã  crÃ©er dans Power BI Desktop.
+
+Transactions totales = COUNTROWS(Transactions)
+
+Chiffre d'affaires = SUM(Transactions[total_amount])
+
+Panier moyen = DIVIDE([Chiffre d'affaires], [Transactions totales])
+
+Articles vendus = SUM(Transactions[quantity])
+
+Prix moyen unitaire = AVERAGE(Transactions[unit_price])
+
+Clients actifs = DISTINCTCOUNT(Transactions[customer_id])
+
+Produits vendus = DISTINCTCOUNT(Transactions[product_id])
+
+CatÃ©gories actives = DISTINCTCOUNT(Transactions[category])
+
+Transactions atypiques = COUNTROWS(TransactionAnomalies)
+
+Taux de transactions atypiques = DIVIDE([Transactions atypiques], [Transactions totales])
+
+Montant des transactions atypiques = SUM(TransactionAnomalies[amount])
+
+Surplus au-dessus du seuil = SUMX(TransactionAnomalies, TransactionAnomalies[amount] - TransactionAnomalies[threshold])
+
+Ã‰cart standardisÃ© moyen = AVERAGEX(TransactionAnomalies, DIVIDE(TransactionAnomalies[amount] - TransactionAnomalies[category_mean], TransactionAnomalies[category_std]))
+
+Clients atypiques = COUNTROWS(CustomerAnomalies)
+
+Taux de clients atypiques = DIVIDE([Clients atypiques], COUNTROWS(ClientStats))
+
+CA des clients atypiques = SUM(CustomerAnomalies[total_amount])
+
+PÃ©riodes atypiques = COUNTROWS(PeriodAnomalies)
+
+Variation absolue moyenne = AVERAGEX(PeriodAnomalies, ABS(PeriodAnomalies[variation_percent]))
+
+CA jour prÃ©cÃ©dent = CALCULATE([Chiffre d'affaires], DATEADD('Date'[Date], -1, DAY))
+
+Variation CA jour = DIVIDE([Chiffre d'affaires] - [CA jour prÃ©cÃ©dent], [CA jour prÃ©cÃ©dent])
+
+Transactions jour prÃ©cÃ©dent = CALCULATE([Transactions totales], DATEADD('Date'[Date], -1, DAY))
+
+Variation volume jour = DIVIDE([Transactions totales] - [Transactions jour prÃ©cÃ©dent], [Transactions jour prÃ©cÃ©dent])
+
+CA cumul = CALCULATE([Chiffre d'affaires], FILTER(ALLSELECTED('Date'[Date]), 'Date'[Date] <= MAX('Date'[Date])))
+
+Part du CA = DIVIDE([Chiffre d'affaires], CALCULATE([Chiffre d'affaires], ALLSELECTED(Categories[category])))
+
+Part des anomalies = DIVIDE([Transactions atypiques], CALCULATE([Transactions atypiques], ALLSELECTED(Categories[category])))
+
+Montant moyen anomalie = AVERAGE(TransactionAnomalies[amount])
+
+Montant maximal anomalie = MAX(TransactionAnomalies[amount])
+
+CA par client = DIVIDE([Chiffre d'affaires], [Clients actifs])
+
+// Table calculÃ©e facultative pour l'analyse calendaire. CrÃ©er comme Â« Nouvelle table Â».
+Date = CALENDAR(MIN(Transactions[transaction_date]), MAX(Transactions[transaction_date]))
+
+// Colonnes calculÃ©es de la table Date, Ã  crÃ©er sÃ©parÃ©ment.
+AnnÃ©e = YEAR('Date'[Date])
+Mois numÃ©ro = MONTH('Date'[Date])
+Mois = FORMAT('Date'[Date], "MMM yyyy")
+Jour semaine numÃ©ro = WEEKDAY('Date'[Date], 2)
+Jour semaine = FORMAT('Date'[Date], "dddd")

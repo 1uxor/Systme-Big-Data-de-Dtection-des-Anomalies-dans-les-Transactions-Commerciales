@@ -1,0 +1,59 @@
+services:
+  namenode:
+    build:
+      context: .
+      dockerfile: hadoop/Dockerfile
+    image: projet1-hadoop:3.5.0
+    hostname: namenode
+    command: ["hdfs", "namenode"]
+    env_file: hadoop/config.env
+    environment:
+      ENSURE_NAMENODE_DIR: /opt/hadoop/storage/name
+      KAFKA_BOOTSTRAP_SERVERS: kafka:19092
+    ports:
+      - "9870:9870"
+    volumes:
+      - namenode-data:/opt/hadoop/storage
+      - ./:/workspace
+    depends_on:
+      kafka:
+        condition: service_started
+
+  datanode:
+    image: projet1-hadoop:3.5.0
+    hostname: datanode
+    command: ["hdfs", "datanode"]
+    env_file: hadoop/config.env
+    environment:
+      WAITFOR: namenode:8020
+    volumes:
+      - datanode-data:/opt/hadoop/storage
+    depends_on:
+      namenode:
+        condition: service_started
+
+  resourcemanager:
+    image: projet1-hadoop:3.5.0
+    hostname: resourcemanager
+    command: ["yarn", "resourcemanager"]
+    env_file: hadoop/config.env
+    ports:
+      - "8088:8088"
+    depends_on:
+      namenode:
+        condition: service_started
+
+  nodemanager:
+    image: projet1-hadoop:3.5.0
+    hostname: nodemanager
+    command: ["yarn", "nodemanager"]
+    env_file: hadoop/config.env
+    environment:
+      WAITFOR: resourcemanager:8032
+    depends_on:
+      resourcemanager:
+        condition: service_started
+
+volumes:
+  namenode-data:
+  datanode-data:
